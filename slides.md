@@ -4,7 +4,7 @@ theme: default
 title: Make "Game Boy" music in JavaScript
 description: During this presentation, I will introduce the specificities of 8-bit / chiptune music made famous by vintage game consoles like the Game boy and Nintendo Entertainment System, and how I programed a browser-based MIDI synthesizer that emulates that sound for live performances.
 style: |
-  section.centered h1 {
+  section.centered h1, h2 {
     text-align: center;
   }
   section.topTitle h1 {
@@ -21,9 +21,12 @@ style: |
 
 ---
 <!-- _class: centered -->
-# Make "Game Boy" music in JavaScript
+# Composer de la musique 8-bit en JavaScript
+## Make "Game Boy" music in JavaScript
 
 ![bg](assets/background.png)
+
+![height:300px](./assets/gameboy.jpg)
 
 <!-- title slide -- intro -->
 
