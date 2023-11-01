@@ -1,9 +1,14 @@
 ---
 marp: true
-theme: uncover
+theme: default
 title: Make "Game Boy" music in JavaScript
-tags: Talk, notes
 description: During this presentation, I will introduce the specificities of 8-bit / chiptune music made famous by vintage game consoles like the Game boy and Nintendo Entertainment System, and how I programed a browser-based MIDI synthesizer that emulates that sound for live performances.
+style: |
+  section h1 {
+    position: absolute;
+    top: 0.4em;
+    left: 0.4em;
+  }
 
 ---
 # Make "Game Boy" music in JavaScript
@@ -24,6 +29,17 @@ I wondered what made that sound so unique and recognizable, even for people who 
 
 Today, I'm gonna share with you a few facts that I found fascinating, while going down the rabbit hole of vintage Nintendo music.
 -->
+
+---
+
+1. "Chiptune" basics
+2. Howto & tricks
+3. Remake in JavaScript
+
+---
+# Recorded Waveform (PCM)
+
+![bg contain](./assets/waveform.png)
 
 ---
 # "Chiptune"
