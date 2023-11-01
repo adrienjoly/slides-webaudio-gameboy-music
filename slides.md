@@ -8,6 +8,9 @@ style: |
     background-image: url(./assets/background.png);
     background-size: contain;
   }
+  section.centered h1 {
+    text-align: center;
+  }
   section.topTitle h1 {
     position: absolute;
     top: 0.4em;
@@ -15,6 +18,7 @@ style: |
   }
 
 ---
+<!-- _class: centered -->
 # Make "Game Boy" music in JavaScript
 
 <!-- title slide -- intro -->
