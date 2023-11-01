@@ -4,10 +4,6 @@ theme: default
 title: Make "Game Boy" music in JavaScript
 description: During this presentation, I will introduce the specificities of 8-bit / chiptune music made famous by vintage game consoles like the Game boy and Nintendo Entertainment System, and how I programed a browser-based MIDI synthesizer that emulates that sound for live performances.
 style: |
-  # section {
-  #   background-image: url(./assets/background.png);
-  #   background-size: contain;
-  # }
   section.centered h1 {
     text-align: center;
   }
@@ -57,7 +53,7 @@ Today, I'm gonna share with you a few facts that I found fascinating, while goin
 <!-- _class: topTitle -->
 # Recorded Waveform (PCM)
 
-![bg contain](./assets/waveform.png)
+![](./assets/waveform.png)
 
 <!-- PCM = Pulse-code modulation -->
 
@@ -65,7 +61,9 @@ Today, I'm gonna share with you a few facts that I found fascinating, while goin
 <!-- _class: topTitle -->
 # Channels & Waveforms
 
-![channels, from 8-bit guy's video https://www.youtube.com/watch?v=q_3d1x2VPxk](https://i.imgur.com/UdZxfzT.png)
+<!-- channels, from 8-bit guy's video https://www.youtube.com/watch?v=q_3d1x2VPxk -->
+
+![](https://i.imgur.com/UdZxfzT.png)
 
 <!-- Some people may know that this kind of music is usually called "chip-tune". Why?
 
