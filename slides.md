@@ -16,15 +16,14 @@ description: During this presentation, I will introduce the specificities of 8-b
 # Do you remember this?
 
 @[youtube](BQwohHgrk2s)
-<!-- Source: https://www.youtube.com/watch?v=BQwohHgrk2s -->
 
-<!-- play the video with music -->
-
+<!-- 
 Recently, I felt nostalgic about games from the late 80's. And more specifically about the esthetics of the music from vintage consoles of the era, like the Nintendo Entertainment System and Game Boy.
 
 I wondered what made that sound so unique and recognizable, even for people who have never played these consoles.
 
 Today, I'm gonna share with you a few facts that I found fascinating, while going down the rabbit hole of vintage Nintendo music.
+-->
 
 ---
 # "Chiptune"
@@ -41,7 +40,7 @@ Drums and percussions are simulated by moduling the output of a noise generator!
 ---
 # Example: Maniac Mansion (NES)
 
-{%youtube hWAtoCEuwnY %}
+@[youtube](hWAtoCEuwnY)
 ["Maniac Mansion (NES)" Full Soundtrack [Oscilloscope View] - YouTube](https://www.youtube.com/watch?v=hWAtoCEuwnY)
 
 ---
@@ -52,13 +51,13 @@ Drums and percussions are simulated by moduling the output of a noise generator!
 ---
 # Example: Super Mario Bros (NES)
 
-{%youtube OfrEoEQpPrI %}
+@[youtube](OfrEoEQpPrI)
 [[NES] Super Mario Bros.: Main Theme - Oscilloscope View - YouTube](https://www.youtube.com/watch?v=OfrEoEQpPrI)
 
 ---
 # Trick: drums on noise + triangle channels
 
-{%youtube Wy1l5BAkSoc %}
+@[youtube](Wy1l5BAkSoc)
 [NES Smurfs: Mountains - oscilloscope view - YouTube](https://www.youtube.com/watch?v=Wy1l5BAkSoc)
 
 <!-- Also:
@@ -71,14 +70,14 @@ Drums and percussions are simulated by moduling the output of a noise generator!
 ---
 # How was it programmed?
 
-{%youtube GDP1kyoP8C4 %}
+@[youtube](GDP1kyoP8C4)
 [Tetris (Game Boy) - Music Type B (Impulse Tracker Cover) - YouTube](https://www.youtube.com/watch?v=GDP1kyoP8C4)
 
 ---
 # Challenge: play Nintendo music live
 
 A bit like this band:
-{%youtube HNs7BVn_bOk %}
+@[youtube](HNs7BVn_bOk)
 [マリオ3 SUPER MARIO BROS. 3 Medley / NES BAND 12th Live in Sapporo - YouTube](https://www.youtube.com/watch?v=HNs7BVn_bOk)
 
 ---
