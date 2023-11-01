@@ -1,0 +1,7 @@
+{
+  "name": "slides-webaudio-gameboy-music",
+  "version": "1.0.0",
+  "dependencies": {
+    "markdown-it-video": "^0.6.3"
+  }
+}

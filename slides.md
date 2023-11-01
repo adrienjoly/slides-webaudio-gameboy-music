@@ -15,7 +15,8 @@ description: During this presentation, I will introduce the specificities of 8-b
 ---
 # Do you remember this?
 
-{%youtube BQwohHgrk2s %}<!-- Source: https://www.youtube.com/watch?v=BQwohHgrk2s -->
+@[youtube](BQwohHgrk2s)
+<!-- Source: https://www.youtube.com/watch?v=BQwohHgrk2s -->
 
 <!-- play the video with music -->
 
