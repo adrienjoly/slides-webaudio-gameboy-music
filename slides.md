@@ -1,237 +1,105 @@
 ---
 marp: true
 theme: uncover
+title: Make "Game Boy" music in JavaScript
+tags: Talk, notes
+description: During this presentation, I will introduce the specificities of 8-bit / chiptune music made famous by vintage game consoles like the Game boy and Nintendo Entertainment System, and how I programed a browser-based MIDI synthesizer that emulates that sound for live performances.
+
 ---
+# Make "Game Boy" music in JavaScript
 
-<!-- proposal: https://gospeak.io/u/talks/code-legacy-les-cles-pour-s-en-sortir -->
+<!-- title slide -- intro -->
 
-# **Code legacy 🧟**
+<!-- slides for show&tell: https://docs.google.com/presentation/d/16dDLewssNXK05C56JqK6lySWxZ3wHvEqtOgcqQPt5w4/edit#slide=id.g5707f48d32_0_4 -->
 
-![bg](assets/background.png)
+---
+# Do you remember this?
 
-Les clés pour s'en sortir !
+{%youtube BQwohHgrk2s %}<!-- Source: https://www.youtube.com/watch?v=BQwohHgrk2s -->
 
-<style>
-blockquote {
-  font-size: 120%;
-  margin: 0.8em 0;
-}
-</style>
+<!-- play the video with music -->
 
-<!--
-PLAN:
-- Le code legacy: def, symptomes, problèmes (2mn)
-- Pistes et écueils typiques ⇒ clés (3mn)
-- Étude de cas (4mn)
-- Take-aways / à retenir (1mn)
+Recently, I felt nostalgic about games from the late 80's. And more specifically about the esthetics of the music from vintage consoles of the era, like the Nintendo Entertainment System and Game Boy.
+
+I wondered what made that sound so unique and recognizable, even for people who have never played these consoles.
+
+Today, I'm gonna share with you a few facts that I found fascinating, while going down the rabbit hole of vintage Nintendo music.
+
+---
+# "Chiptune"
+
+Some people may know that this kind of music is usually called "chip-tune". Why?
+
+- NES: Ricoh 2A03 (custom MOS Technology 6502)
+- Game Boy: Sharp LR35902 (hybrid between the Intel 8080 and the Zilog Z80)
+
+Notes are played by synthesizing primitive waveforms (e.g. square, triangle)
+
+Drums and percussions are simulated by moduling the output of a noise generator!
+
+---
+# Example: Maniac Mansion (NES)
+
+{%youtube hWAtoCEuwnY %}
+["Maniac Mansion (NES)" Full Soundtrack [Oscilloscope View] - YouTube](https://www.youtube.com/watch?v=hWAtoCEuwnY)
+
+---
+# Waves and channels
+
+![channels, from 8-bit guy's video https://www.youtube.com/watch?v=q_3d1x2VPxk](https://i.imgur.com/UdZxfzT.png)
+
+---
+# Example: Super Mario Bros (NES)
+
+{%youtube OfrEoEQpPrI %}
+[[NES] Super Mario Bros.: Main Theme - Oscilloscope View - YouTube](https://www.youtube.com/watch?v=OfrEoEQpPrI)
+
+---
+# Trick: drums on noise + triangle channels
+
+{%youtube Wy1l5BAkSoc %}
+[NES Smurfs: Mountains - oscilloscope view - YouTube](https://www.youtube.com/watch?v=Wy1l5BAkSoc)
+
+<!-- Also:
+[NES Audio: Triangle Kick Drum - YouTube](https://www.youtube.com/watch?v=Jd6nyynuzio)
+
+=> TODO: Try to give a live example by muting the noise and pulse channels.
+
 -->
 
 ---
+# How was it programmed?
 
-> "Legacy Code is **valuable** code you’re **afraid** to change"
-
-Nicolas Carlo & Alex Bolboaca
-
-<!-- notion de peur mais aussi de valeur pour l'entreprise -->
+{%youtube GDP1kyoP8C4 %}
+[Tetris (Game Boy) - Music Type B (Impulse Tracker Cover) - YouTube](https://www.youtube.com/watch?v=GDP1kyoP8C4)
 
 ---
+# Challenge: play Nintendo music live
 
-## **Symptomes** de code legacy
-
-* 🐌 Vélocité basse
-
-* 🥵 Bugs et regressions
-
-* 👼 Devs *irremplaçables*
+A bit like this band:
+{%youtube HNs7BVn_bOk %}
+[マリオ3 SUPER MARIO BROS. 3 Medley / NES BAND 12th Live in Sapporo - YouTube](https://www.youtube.com/watch?v=HNs7BVn_bOk)
 
 ---
+# ... with my own sound synthesizer!
 
-## Problèmes pour les **dévs**
-
-1. 😓 Rechignement
-
-2. 😤 Tensions
-
-3. 🙈 Résignation
+<!-- DEMO TIME: PLAY TETRIS -->
 
 ---
+# How it's made
 
-## Problèmes pour l’**entreprise** 🏭
+- Keyboard input: WebMIDI
+- Tone generator: WebAudio / Oscillators
+- Noise-based sounds: http://sfxr.me
+- Oscilloscope viz: Canvas (made by Jérôme)
 
-- 📉 Perte de compétitivité
-
-- 👋 Churn
-
-- ⚰️ “bus factor” 
-
----
-
-🛠️ REMEDIATION ?
+Source: https://github.com/adrienjoly/webmidi-launchkey-mini
 
 ---
+# Next steps
 
-## ❌ Pas le temps / pas le budget
-
-<style scoped>
-ul li {
-  list-style-type: "➡️ ";
-}
-</style>
-
-* **Risques et/ou coûts** à présenter
-
----
-
-## ❌ Refonte en sous-marin
-
-<style scoped>
-ul li {
-  list-style-type: "➡️ ";
-}
-</style>
-
-* **Confiance** à recréer entre équipes
-
-<!--
-Raisons de ne pas le faire:
-- perte de confiance: PM et/ou direction
-- deux codebases à maintenir 🥵
-- risque de refonte avortée
-    - ex: codebase laissée dans un état encore pire
--->
-
----
-
-## ❌ Refonte sans fin
-
-<style scoped>
-ul li {
-  list-style-type: "➡️ ";
-}
-</style>
-
-* **Planification** et/ou formation à prévoir
-
----
-
-📌 ÉTUDE DE CAS
-
----
-
-## **Situation**
-
-<style scoped>
-@counter-style problem-bullets {
-  system: cyclic;
-  symbols: "✈️""🏭""🥵";
-  suffix: " ";
-}
-ul li {
-  list-style-type: problem-bullets;
-}
-</style>
-
-* Site e-commerce veut s'ouvrir aux USA
-* Code devenu complexe et imprévisible
-* Dévs ont peur de tout casser
-
----
-
-## 🔬 **Mesure** des coûts et risques
-
-* Qualité / santé du code de "checkout"
-* Nombre de bugs et regressions par nouvelle feature
-* Temps passé sur correctifs
-* → Calcul du coût réel par feature 💸
-
----
-
-## 🧭 **Proposition** d'un plan
-
-**Périmètre** d'intervention initial: code de "checkout"
-
-* Prévenir **anomalies**: usage de *value objects* (DDD)
-* Explicitation **devises**: migration de base de données
-* **Pas de code freeze**: tracking du code legacy/refondu
-* → **Comparer** le coût: refonte VS status quo 💸
-
-<!-- retirés par soucis de concision:
-3) **Livraisons**: délégation à une API SaaS externe
-4) **Cohérence** données: retrait d'un cache interne
--->
-
----
-
-## 🤝 **Coordination** avec collègues
-
-* Informer l'**équipe produit** des coûts et risques actuels
-* **Présenter** le plan de refonte
-* Négocier sur **planification** des chantiers
-* Obtenir l'**accord** de la direction
-
----
-
-## 📈 **Suivi** et réassurance
-
-* **Partager** l'avancement avec les personnes intéressées
-* Éviter **tunnel**: PoC, baby steps, déploiements réguliers
-* Vérifier que tout changement peut être **annulé** en 1mn
-* **Cranter** la qualité à chaque amélioration
-* Prévenir risques: **négocier** ajustements si nécessaire
-* **Célébrer** les victoires !
-
----
-
-## 🍱 **À retenir**
-
-<style scoped>
-@counter-style emoji-bullets {
-  system: cyclic;
-  symbols: "💸""🛑""🤝""😌";
-  suffix: " ";
-}
-ul li {
-  list-style-type: emoji-bullets;
-}
-</style>
-
-* Legacy = **coûts** + **risques** → entreprise
-
-* Réécriture from scratch = **danger**
-
-* Mesurer → Planifier → Accorder → Rassurer
-
-* Dé-risquer: PoC, baby steps, déploiment continu
-
----
-
-## 🍱 **À retenir**
-
-<style scoped>
-@counter-style emoji-bullets {
-  system: cyclic;
-  symbols: "💸""🛑""🤝""😌";
-  suffix: " ";
-}
-ul li {
-  list-style-type: emoji-bullets;
-}
-</style>
-
-![bg right](assets/final-slide.png)
-
-- Legacy = **coûts** + **risques** → entreprise
-
-- Réécriture from scratch = **danger**
-
-- Mesurer → Planifier → Accorder → Rassurer
-
-- Dé-risquer: PoC, baby steps, déploiment continu
-
-<!--
-Take-aways: (1mn)
-- Devs ET entreprise ont **intérêt à maitriser** la complexité accidentelle de leur code
-- **Prioriser les problèmes** en fonction des coûts & risques induits ET de la direction stratégique de l’entreprise
-- **Convaincre** sur la base d’un **plan** avec objectifs mesurables
-- Avancer **progressivement**, en rassurant les personnes impactées
--->
+- implement arpeggiator
+- implement tone modulation: duty cycle, ADSR enveloppe
+- support more than 1 channel at once
+- find other musicians to join the project
+- rehearse and give a concert!
